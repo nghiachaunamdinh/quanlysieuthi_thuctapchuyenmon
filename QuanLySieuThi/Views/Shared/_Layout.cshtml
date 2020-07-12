@@ -1,0 +1,345 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trang chủ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Grocery Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+               function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //for-mobile-apps -->
+    <link rel="shortcut icon" type="text/css" href="~/images/logo_vimart.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="~/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- font-awesome icons -->
+    <link href="~/css/font-awesome.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- //font-awesome icons -->
+    <!-- js -->
+    <script src="~/js/jquery-1.11.1.min.js"></script>
+    <!-- //js -->
+    <link href='//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="~/js/move-top.js"></script>
+    <script type="text/javascript" src="~/js/easing.js"></script>
+
+</head>
+
+<body>
+    <!-- header -->
+    <div class="agileits_header" style="background-color:#0000cc;">
+        <!--mat hang hot-->
+        <div class="w3l_offers ">
+            <a href="~/Home/Mathanghot" style="background-color:red">Mặt hàng HOT!</a>
+        </div>
+        <!--tim kiem-->
+        <div class="w3l_search">
+            <form action="#" method="post">
+                <input type="text" name="Product" value="Tim kiem ..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search a product...';}" required="">
+                <input type="submit" value=" ">
+            </form>
+        </div>
+        <!--lien he-->
+        <div class="w3l_header_right1" style="background-color:#ffff66;">
+            <h2><a href="Contact">Liên hệ</a></h2>
+        </div>
+
+        <!--gio hang-->
+        <div class="product_list_header">
+            <form action="#" method="post" class="last">
+                <fieldset>
+                    <input type="hidden" name="cmd" value="_cart" />
+                    <input type="hidden" name="display" value="1" />
+                    <input type="submit" name="submit" value="Xem giỏ hàng" class="button" />
+                </fieldset>
+            </form>
+        </div>
+        <!--dang nhap-->
+        <div class="w3l_header_right">
+            <div style="background-color:aqua;">
+                @TempData["username"]
+            </div>
+            <ul>
+
+                <li class="dropdown profile_details_drop">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i><span class="caret"></span></a>
+                    <div class="mega-dropdown-menu">
+                        <div class="w3ls_vegetables">
+                            <ul class="dropdown-menu drp-mnu">
+                                 <li><a>@TempData["username"]</a></li>
+                                <li><a href="~/Home/Login">Đăng nhập</a></li>
+                                <li><a href="/KhachHangs/Create">Đăng ký</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <!-- script-for sticky-nav -->
+    <script>
+        $(document).ready(function () {
+            var navoffeset = $(".agileits_header").offset().top;
+            $(window).scroll(function () {
+                var scrollpos = $(window).scrollTop();
+                if (scrollpos >= navoffeset) {
+                    $(".agileits_header").addClass("fixed");
+                } else {
+                    $(".agileits_header").removeClass("fixed");
+                }
+            });
+
+        });
+    </script>
+    <!-- //script-for sticky-nav -->
+    <div class="logo_products" style="background-color:#ffff80;">
+        <div class="container">
+            <div class="w3ls_logo_products_left" />
+            <img src="~/images/logo.jpg" style="width:160px;height:80px;" />
+        </div>
+        <div class="w3ls_logo_products_left1">
+            <ul class="special_items">
+                <li><a href="Index" style="font-size:30px;">Trang chủ</a><i>/</i></li>
+                <li><a href="~/Home/About" style="font-size:30px;">Giới thiệu</a><i>/</i></li>
+                <li><a href="~/Home/Mathang" style="font-size:30px;">Mặt hàng</a><i>/</i></li>
+                <li><a href="Services" style="font-size:30px;">Services</a></li>
+            </ul>
+        </div>
+        <div class="w3ls_logo_products_left1">
+            <ul class="phone_email">
+                <li><i class="fa fa-phone" aria-hidden="true"></i>(+84) 818783826</li>
+                <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:it1k58utc@gmail.com">it1k58utc@gmail.com</a></li>
+            </ul>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <!-- //header -->
+    <!-- banner -->
+    <div class="banner" style="background-color:#3385ff;">
+        <div class="container text-center">
+
+            <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width:90%;margin:0px auto;">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="~/images/01.jpg" alt="" style="width:100%;height: 700px">
+                    </div>
+
+                    <div class="item">
+                        <img src="~/images/02.jpg" alt="" style="width:100%;height: 700px">
+                    </div>
+
+                    <div class="item">
+                        <img src="~/images/03.jpg" alt="" style="width:100%;height: 700px">
+                    </div>
+                    <div class="item">
+                        <img src="~/images/04.jpg" alt="" style="width:100%;height: 700px">
+                    </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    @RenderBody();
+    <!-- newsletter -->
+    <hr class="my-4" style="color:red">
+    <h3>Giới thiệu cửa hàng VinMart </h3>
+    <div class="container text-left" style="margin-top: 50px;">
+        <div class="row">
+            <div class="col-sm-6" style="font-family: cursive;font-weight: bold;">
+                <p>
+                    Rau xanh bao la, củ quả thả ga, chỉ cần đến VinMart thôi cả nhà ơi.
+
+                    👍Hãy đến Vinmart hoặc gọi điện đặt hàng ngay nào!
+
+                    Xem ngay các sản phẩm rau - củ - quả VinEco trợ giá từ 30 - 50% tại đây:
+
+                    🥕 Tại khu vực Miền Bắc: bit.ly/VinEcoMB
+
+                    🥕 Tại khu vực Miền Nam: bit.ly/VinEcoMN
+
+                    -----
+
+                    ĐI CHỢ AN TOÀN CÙNG VINMART
+
+                    ▪ Đặt hàng trực tiếp qua điện thoại tại hệ thống siêu thị VinMart trên toàn quốc (danh sách số điện thoại siêu thị: bit.ly/2wozIlu)
+
+                    ▪Đăt hàng trên app VinID tại https://id.vin/mWw hoặc website VinMart.com
+
+                    ▪ Miễn phí giao hàng (Áp dụng cho hóa đơn từ 200.000đ tại các tỉnh & 500.000đ tại Hà Nội, Hồ Chí Minh)
+
+                    ▪ Giao hàng trong vòng 4h đồng hồ đối với các đơn hàng đặt trước 20:00 hàng ngày
+
+                    #Vinmart  #Vinmartplus
+                    Rau xanh bao la, củ quả thả ga, chỉ cần đến VinMart thôi cả nhà ơi.
+
+                    👍Hãy đến Vinmart hoặc gọi điện đặt hàng ngay nào!
+
+                    Xem ngay các sản phẩm rau - củ - quả VinEco trợ giá từ 30 - 50% tại đây:
+
+                    🥕 Tại khu vực Miền Bắc: bit.ly/VinEcoMB
+
+                    🥕 Tại khu vực Miền Nam: bit.ly/VinEcoMN
+
+                    -----
+
+                    ĐI CHỢ AN TOÀN CÙNG VINMART
+
+                    ▪ Đặt hàng trực tiếp qua điện thoại tại hệ thống siêu thị VinMart trên toàn quốc (danh sách số điện thoại siêu thị: bit.ly/2wozIlu)
+
+                    ▪Đăt hàng trên app VinID tại https://id.vin/mWw hoặc website VinMart.com
+
+                    ▪ Miễn phí giao hàng (Áp dụng cho hóa đơn từ 200.000đ tại các tỉnh & 500.000đ tại Hà Nội, Hồ Chí Minh)
+
+                    ▪ Giao hàng trong vòng 4h đồng hồ đối với các đơn hàng đặt trước 20:00 hàng ngày
+
+                    #Vinmart  #Vinmartplus
+
+                </p>
+            </div>
+            <div class="col-sm-6">
+                <iframe width="700" height="482" src="https://www.youtube.com/embed/qZH1cPaR--c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>"
+            </div>
+        </div>
+    </div>
+    <hr class="my-4">
+    <h3>Địa chỉ cửa hàng</h3>
+    <div class="container text-right">
+        <div class="row">
+            <div class="col-md-6">
+                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1boNxPm_80m7e0GIyWCIPrivT48xNvR4D" width="540" height="400"></iframe>
+            </div>
+            <div class="col-md-6" style="font-family: cursive;font-weight: bold;font-size: 20px;">
+                Trụ sở chính:<br>
+                Tầng 5, Mplaza SaiGon, 39 Lê Duẩn, Phường Bến Nghé, Quận 1, Thành Phố Hồ Chí Minh, Việt Nam.<br>
+                Địa chỉ giao dịch Tp.HCM:<br>
+                Tầng 5, Mplaza SaiGon, 39 Lê Duẩn, Phường Bến Nghé, Quận 1, Thành Phố Hồ Chí Minh.<br>
+                Địa chỉ giao dịch Hà Nội:<br>
+                Tower 1, Times City, 458 Minh Khai, Phường Vĩnh Tuy, Quận Hai Bà Trưng, Thành phố Hà Nội.
+            </div>
+        </div>
+    </div>
+    <hr class="my-4">
+    <div class="newsletter">
+        <div class="container">
+            <div class="w3agile_newsletter_left">
+                <h3>Đăng ký để nhận thông tin khuyến mại</h3>
+            </div>
+            <div class="w3agile_newsletter_right">
+                <form action="#" method="post">
+                    <input type="email" name="Email" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
+                    <input type="submit" value="Gửi">
+                </form>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <hr class="my-4">
+    <!-- //newsletter -->
+    <!-- footer -->
+    <div class="footer">
+        <hr class="my-4">
+        <div class="container-fluid padding" style="font-family: cursive;font-weight: bold;">
+            <div class="row text-center padding">
+                <div class="col-12">
+                    <h2>Hãy liên hệ với chúng tôi</h2>
+                </div>
+            </div>
+
+            <div class="row text-center padding">
+                <div class="col-12 ">
+                    <a href="" style="font-size: 40px;padding: 20px;"><i class="fab fa-twitter" style="color: #00aced;"></i></a>
+                    <a href="" style="font-size: 40px;padding: 20px;"><i class="fab fa-facebook" style="color: #3b5998;"></i></a>
+                    <a href="" style="font-size: 40px;padding: 20px;"><i class="fab fa-google-plus-g" style="color: #dd4b39;"></i></a>
+                    <a href="" style="font-size: 40px;padding: 20px;"><i class="fab fa-instagram" style="color: #517fa4;"></i></a>
+                    <a href="" style="font-size: 40px;padding: 20px;"><i class="fab fa-youtube" style="color: #bb0000;"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="wthree_footer_copy">
+                <p><h3>© 2020 | ---- | Thiết kế bởi <a href="utc.com">trong dac</a></h3></p>
+            </div>
+        </div>
+    </div>
+    <!-- //footer -->
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".dropdown").hover(
+                function () {
+                    $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+                    $(this).toggleClass('open');
+                },
+                function () {
+                    $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+                    $(this).toggleClass('open');
+                }
+            );
+        });
+    </script>
+    <!-- here stars scrolling icon -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*
+                var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+                };
+            */
+
+            $().UItoTop({ easingType: 'easeOutQuart' });
+
+        });
+    </script>
+    <!-- //here ends scrolling icon -->
+    <script src="~/js/minicart.js"></script>
+    <script>
+        paypal.minicart.render();
+
+        paypal.minicart.cart.on('checkout', function (evt) {
+            var items = this.items(),
+                len = items.length,
+                total = 0,
+                i;
+
+            // Count the number of each item in the cart
+            for (i = 0; i < len; i++) {
+                total += items[i].get('quantity');
+            }
+
+            if (total < 3) {
+                alert('The minimum order quantity is 3. Please add more to your shopping cart before checking out');
+                evt.preventDefault();
+            }
+        });
+
+    </script>
+</body>
+</html>
