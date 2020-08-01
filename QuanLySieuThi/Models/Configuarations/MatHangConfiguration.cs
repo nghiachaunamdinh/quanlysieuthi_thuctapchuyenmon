@@ -13,7 +13,7 @@ namespace QuanLySieuThi.Models.Configuarations
         public void Configure(EntityTypeBuilder<MatHang> builder)
         {
             builder.ToTable("MatHangs");
-            builder.HasKey(x =>new { x.MaMH,x.MaLH,x.MaDVT});
+            builder.HasKey(x =>x.MaMH);
             builder.HasOne(p => p.DonViTinh).WithMany(b => b.MatHangs).HasForeignKey(p => p.MaDVT);
             builder.HasOne(p => p.LoaiHang).WithMany(b => b.MatHangs).HasForeignKey(p => p.MaLH);
         }

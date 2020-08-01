@@ -21,15 +21,10 @@ namespace QuanLySieuThi.Models.Entities
         public string MaCV { get; set; }
         public string Username { get; set; }
         public string Pwd { get; set; }
-        public string avatar { get; set; }
+        public string Avatar { get; set; }
 
-        public int? allowed { get; set; }
+        public int? Allowed { get; set; }
 
-        //public virtual ChucVu ChucVu { get; set; }
-        //public virtual ICollection<HoaDon> HoaDons { get; set; }
-        //public virtual ICollection<PhieuKiemKe> PhieuKiemKes { get; set; }
-        //public virtual ICollection<PhieuNhap> PhieuNhaps { get; set; }
-        //public virtual ICollection<PhieuXuat> PhieuXuats { get; set; }
         public ChucVu ChucVu { get; set; }
         public List<PhieuNhap> PhieuNhaps { get; set; }
         public List<PhieuXuat> PhieuXuats { get; set; }

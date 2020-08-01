@@ -14,9 +14,11 @@ namespace QuanLySieuThi.Models.Entities
         public string DiaChi { get; set; }
         public string DienThoai { get; set; }
         public DateTime? NgayCapThe { get; set; }
+        public string Anh { get; set; }
         public DateTime? NgayMuaGanNhat { get; set; }
         public double? DiemThuong { get; set; }
         //public virtual ICollection<HoaDon> HoaDons { get; set; }
         public List<HoaDon> HoaDons { get; set; }
+
     }
 }

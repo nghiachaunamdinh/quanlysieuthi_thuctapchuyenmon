@@ -13,7 +13,8 @@ namespace QuanLySieuThi.Models.Configuarations
         public void Configure(EntityTypeBuilder<LoaiHang> builder)
         {
             builder.ToTable("LoaiHangs");
-            builder.HasKey(x => x.MaLH);
+            builder.HasKey(x => x.MaLH );
+            builder.HasOne(p => p.ChungLoai).WithMany(b => b.LoaiHangs).HasForeignKey(p => p.MaCL);
         }
     }
 }

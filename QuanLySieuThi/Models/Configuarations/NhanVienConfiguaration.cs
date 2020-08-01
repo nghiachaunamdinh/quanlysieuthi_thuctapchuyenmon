@@ -14,6 +14,7 @@ namespace QuanLySieuThi.Models.Configuarations
         {
             builder.ToTable("NhanViens");
             builder.HasKey(x => x.MaNV);
+            builder.HasOne(p => p.ChucVu).WithMany(b => b.NhanViens).HasForeignKey(p => p.MaCV);
         }
     }
 }

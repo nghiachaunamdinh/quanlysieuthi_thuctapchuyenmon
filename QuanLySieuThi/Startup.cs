@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using QuanLySieuThi.Models.EF;
+using Microsoft.AspNetCore.Mvc;
 
 namespace QuanLySieuThi
 {
@@ -23,8 +24,10 @@ namespace QuanLySieuThi
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+        [Obsolete]
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddControllersWithViews();
             services.AddRazorPages();
 
@@ -49,11 +52,16 @@ namespace QuanLySieuThi
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
-
+            
             app.UseEndpoints(endpoints =>
             {
+
+                
+                endpoints.MapControllerRoute(
+                    name: "areas",
+                    pattern: "{area:exists}/{controller=Home}/{action=Login}");
                 endpoints.MapControllerRoute(
                     name: "Default",
                     pattern: "{controller}/{action}/{id}");

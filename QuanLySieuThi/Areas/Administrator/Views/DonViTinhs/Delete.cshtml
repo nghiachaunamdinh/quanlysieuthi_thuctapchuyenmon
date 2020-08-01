@@ -1,0 +1,34 @@
+﻿@model QuanLySieuThi.Models.Entities.DonViTinh
+
+@{
+    ViewData["Title"] = "Xóa";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color:blue;font-style:oblique">Xóa</h2>
+
+<h3 style="color:red;font-style:oblique">Bạn có muốn xóa không?</h3>
+<div>
+    <h4>Đơn vị tính</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ten)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xoa" class="btn btn-default" /> |
+            @Html.ActionLink("Quay lại", "Index")
+        </div>
+    }
+</div>

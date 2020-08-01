@@ -3,9 +3,48 @@
     ViewBag.Title = "Home Page";
     List<MatHang> listnew = ViewBag.mhnew;
     List<MatHang> listbanchay = ViewBag.mhbanchay;
+    List<MatHang> listtimkiem = ViewBag.mhtimkiem;
 }
 
-<!--san pham moi-->
+
+
+
+    <div class="top-brands" style="background-color:#3385ff;">
+        <div class="container">
+
+            <div class="agile_top_brands_grids">
+
+                @foreach (var item in listtimkiem)
+                {
+                    <div class="col-md-3 top_brand_left">
+                        <div class="hover14 column">
+                            <div class="agile_top_brand_left_grid">
+
+                                <div class="agile_top_brand_left_grid1">
+                                    <figure>
+                                        <div class="snipcart-item block">
+                                            <div class="snipcart-thumb">
+                                                <a href="@Url.Action("Detailes","Home",new { ma = item.MaMH })"><img title=" " alt=" " src="~/images/@item.HinhMinhHoa" class="img-responsive" /></a>
+                                                <p>@item.Ten</p>
+                                                <h4>@item.GiaBan</h4>
+                                            </div>
+                                            <div class="snipcart-details top_brand_home_details">
+                                                <button class="btn btn-danger">Mua sản phẩm</button>
+                                            </div>
+                                        </div>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                
+            </div>
+
+        </div>
+       
+    </div>
 <div class="top-brands" style="background-color:#3385ff;">
     <div class="container">
         <h3>Mặt hàng mới</h3>
@@ -16,7 +55,7 @@
                 <div class="col-md-2 top_brand_left">
                     <div class="hover14 column">
                         <div class="agile_top_brand_left_grid">
-                            <div class="tag"><img src="~/images/tag.png" alt=" " class="img-responsive" /></div>
+                           
                             <div class="agile_top_brand_left_grid1">
                                 <figure>
                                     <div class="snipcart-item block">
@@ -66,7 +105,7 @@
                 <div class="col-md-4 top_brand_left">
                     <div class="hover14 column">
                         <div class="agile_top_brand_left_grid">
-                            <div class="tag"><img src="~/images/tag.png" alt=" " class="img-responsive" /></div>
+                           
                             <div class="agile_top_brand_left_grid1">
                                 <figure>
                                     <div class="snipcart-item block">

@@ -17,13 +17,9 @@ namespace QuanLySieuThi.Models.Entities
         public string MaNV { get; set; }
         public string MaKH { get; set; }
         public int? DiemThuong { get; set; }
-        //public virtual ICollection<ChiTietHoaDon> ChiTietHoaDons { get; set; }
-
-        //public virtual KhachHang KhachHang { get; set; }
-
-        //public virtual NhanVien NhanVien { get; set; }
+     
         public NhanVien NhanVien { get; set; }
         public List<ChiTietHoaDon> ChiTietHoaDons { get; set; }
-        public KhachHang khachHang { get; set; }
+        public KhachHang KhachHang { get; set; }
     }
 }

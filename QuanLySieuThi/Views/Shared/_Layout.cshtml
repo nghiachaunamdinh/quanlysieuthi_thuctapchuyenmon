@@ -37,15 +37,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <a href="~/Home/Mathanghot" style="background-color:red">Mặt hàng HOT!</a>
         </div>
         <!--tim kiem-->
-        <div class="w3l_search">
-            <form action="#" method="post">
-                <input type="text" name="Product" value="Tim kiem ..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search a product...';}" required="">
-                <input type="submit" value=" ">
-            </form>
-        </div>
         <!--lien he-->
-        <div class="w3l_header_right1" style="background-color:#ffff66;">
-            <h2><a href="Contact">Liên hệ</a></h2>
+        <div class="w3l_header_right1" style="background-color:#ffff66;height:100%">
+            <img src="~/images/@TempData["Anh"]" style="width:30px;height:30px" />
         </div>
 
         <!--gio hang-->
@@ -60,9 +54,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
         <!--dang nhap-->
         <div class="w3l_header_right">
-            <div style="background-color:aqua;">
-                @TempData["username"]
-            </div>
             <ul>
 
                 <li class="dropdown profile_details_drop">
@@ -70,7 +61,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="mega-dropdown-menu">
                         <div class="w3ls_vegetables">
                             <ul class="dropdown-menu drp-mnu">
-                                 <li><a>@TempData["username"]</a></li>
+                                <li><a>@TempData["username"]</a></li>
                                 <li><a href="~/Home/Login">Đăng nhập</a></li>
                                 <li><a href="/KhachHangs/Create">Đăng ký</a></li>
                             </ul>
@@ -81,6 +72,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
         <div class="clearfix"> </div>
     </div>
+
     <!-- script-for sticky-nav -->
     <script>
         $(document).ready(function () {
@@ -104,9 +96,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
         <div class="w3ls_logo_products_left1">
             <ul class="special_items">
-                <li><a href="Index" style="font-size:30px;">Trang chủ</a><i>/</i></li>
+                <li><a href="~/Home/Index" style="font-size:30px;font-family:cursive">Trang chủ</a><i>/</i></li>
                 <li><a href="~/Home/About" style="font-size:30px;">Giới thiệu</a><i>/</i></li>
                 <li><a href="~/Home/Mathang" style="font-size:30px;">Mặt hàng</a><i>/</i></li>
+
                 <li><a href="Services" style="font-size:30px;">Services</a></li>
             </ul>
         </div>
@@ -118,12 +111,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
         <div class="clearfix"> </div>
     </div>
+    <div class="fa-search">
+        <div class="row">
+            <form method="get" asp-action="Index">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4"><input type="search" placeholder="Nhập mã sản phẩm ...." class="form-control" name="Empsearch" value="@ViewData["Data"]" /></div>
+                <div class="col-lg-2"> <input type="submit" value="Search" class="btn btn-success"></div>
+                <div class="col-lg-2"></div>
+            </form>
+        </div>
+    </div>
     <!-- //header -->
     <!-- banner -->
     <div class="banner" style="background-color:#3385ff;">
         <div class="container text-center">
 
-            <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width:90%;margin:0px auto;">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width:80%;margin:0px auto;">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -135,18 +138,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img src="~/images/01.jpg" alt="" style="width:100%;height: 700px">
+                        <img src="~/images/v01.jpg" alt="" style="width:100%;height: 500px">
                     </div>
 
                     <div class="item">
-                        <img src="~/images/02.jpg" alt="" style="width:100%;height: 700px">
+                        <img src="~/images/v02.jpg" alt="" style="width:100%;height: 700px">
                     </div>
 
                     <div class="item">
-                        <img src="~/images/03.jpg" alt="" style="width:100%;height: 700px">
+                        <img src="~/images/v03.jpg" alt="" style="width:100%;height: 700px">
                     </div>
                     <div class="item">
-                        <img src="~/images/04.jpg" alt="" style="width:100%;height: 700px">
+                        <img src="~/images/v04.jpg" alt="" style="width:100%;height: 700px">
                     </div>
                 </div>
 
@@ -276,6 +279,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <a href="" style="font-size: 40px;padding: 20px;"><i class="fab fa-google-plus-g" style="color: #dd4b39;"></i></a>
                     <a href="" style="font-size: 40px;padding: 20px;"><i class="fab fa-instagram" style="color: #517fa4;"></i></a>
                     <a href="" style="font-size: 40px;padding: 20px;"><i class="fab fa-youtube" style="color: #bb0000;"></i></a>
+                    <a href="/Administrator/Home/Login" style="font-size: 40px;padding: 20px;"><i class="far fa-id-badge"></i></a>
                 </div>
             </div>
         </div>
@@ -305,15 +309,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- here stars scrolling icon -->
     <script type="text/javascript">
         $(document).ready(function () {
-            /*
-                var defaults = {
-                containerID: 'toTop', // fading element id
-                containerHoverID: 'toTopHover', // fading element hover id
-                scrollSpeed: 1200,
-                easingType: 'linear'
-                };
-            */
-
+          
             $().UItoTop({ easingType: 'easeOutQuart' });
 
         });

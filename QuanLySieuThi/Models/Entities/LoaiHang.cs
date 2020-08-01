@@ -12,8 +12,6 @@ namespace QuanLySieuThi.Models.Entities
         public string MaLH { get; set; }
         public string Ten { get; set; }
         public string MaCL { get; set; }
-        //public virtual ChungLoai ChungLoai { get; set; }
-        //public virtual ICollection<MatHang> MatHangs { get; set; }
        
         public ChungLoai ChungLoai { get; set; }
         public List<MatHang> MatHangs { get; set; }

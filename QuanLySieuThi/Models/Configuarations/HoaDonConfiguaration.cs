@@ -13,7 +13,9 @@ namespace QuanLySieuThi.Models.Configuarations
         public void Configure(EntityTypeBuilder<HoaDon> builder)
         {
             builder.ToTable("HoaDons");
-            builder.HasKey(x => x.MaHD);
+            builder.HasKey(x =>  x.MaHD );
+            builder.HasOne(p => p.KhachHang).WithMany(b => b.HoaDons).HasForeignKey(p => p.MaKH);
+            builder.HasOne(p => p.NhanVien).WithMany(b => b.HoaDons).HasForeignKey(p => p.MaNV);
         }
     }
 }

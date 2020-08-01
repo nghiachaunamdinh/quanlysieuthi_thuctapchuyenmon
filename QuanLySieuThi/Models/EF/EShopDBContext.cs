@@ -37,11 +37,65 @@ namespace QuanLySieuThi.Models.EF
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<LoaiHang>()
-        .HasMany(c => c.MatHangs)
-        .WithOne(e => e.LoaiHang);
+                  .HasMany(c => c.MatHangs)
+                  .WithOne(e => e.LoaiHang);
+            modelBuilder.Entity<ChungLoai>()
+                  .HasMany(c => c.LoaiHangs)
+                  .WithOne(e => e.ChungLoai);
             modelBuilder.Entity<DonViTinh>()
-        .HasMany(c => c.MatHangs)
-        .WithOne(e => e.DonViTinh);
+                   .HasMany(c => c.MatHangs)
+                    .WithOne(e => e.DonViTinh);
+            modelBuilder.Entity<HoaDon>()
+               .HasMany(e => e.ChiTietHoaDons)
+               .WithOne(e => e.HoaDon);
+            modelBuilder.Entity<KhachHang>()
+              .HasMany(e => e.HoaDons)
+              .WithOne(e => e.KhachHang);
+
+            modelBuilder.Entity<NhaCungCap>()
+              .HasMany(e => e.PhieuNhapChiTiets)
+              .WithOne(e => e.NhaCungCap);
+
+            modelBuilder.Entity<PhieuNhap>()
+              .HasMany(e => e.PhieuNhapChiTiets)
+              .WithOne(e => e.PhieuNhap);
+
+            modelBuilder.Entity<PhieuXuat>()
+              .HasMany(e => e.PhieuXuatChiTiets)
+              .WithOne(e => e.PhieuXuat);
+
+
+            modelBuilder.Entity<NhanVien>()
+               .HasMany(e => e.HoaDons)
+               .WithOne(e => e.NhanVien);
+            modelBuilder.Entity<NhanVien>()
+               .HasMany(e => e.PhieuKiemKes)
+               .WithOne(e => e.NhanVien);
+            modelBuilder.Entity<NhanVien>()
+               .HasMany(e => e.PhieuXuats)
+               .WithOne(e => e.NhanVien);
+            modelBuilder.Entity<NhanVien>()
+               .HasMany(e => e.PhieuNhaps)
+               .WithOne(e => e.NhanVien);
+
+            modelBuilder.Entity<MatHang>()
+               .HasMany(e => e.ChiTietHoaDons)
+               .WithOne(e => e.MatHang);
+            modelBuilder.Entity<MatHang>()
+              .HasMany(e => e.PhieuKiemKeChiTiets)
+              .WithOne(e => e.MatHang);
+            modelBuilder.Entity<MatHang>()
+              .HasMany(e => e.PhieuNhapChiTiets)
+              .WithOne(e => e.MatHang);
+            modelBuilder.Entity<MatHang>()
+              .HasMany(e => e.PhieuXuatChiTiets)
+              .WithOne(e => e.MatHang);
+            modelBuilder.Entity<PhieuKiemKe>()
+              .HasMany(e => e.PhieuKiemKeChiTiets)
+              .WithOne(e => e.PhieuKiemKe);
+            modelBuilder.Entity<MatHang>()
+              .HasMany(e => e.ChiTietHoaDons)
+              .WithOne(e => e.MatHang);
             modelBuilder.ApplyConfiguration(new MatHangConfiguration());
             modelBuilder.ApplyConfiguration(new ChiTietHoaDonConfiguaration());
             modelBuilder.ApplyConfiguration(new ChucVuConfiguaration());

@@ -1,0 +1,27 @@
+﻿@model QuanLySieuThi.Models.Entities.DonViTinh
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color:blue;font-style:oblique">Chi tiết</h2>
+
+<div>
+    <h4>Đơn vị tính</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ten)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Thay đổi", "Edit", new { id = Model.MaDVT }) |
+    @Html.ActionLink("Quay lại", "Index")
+</p>
